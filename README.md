@@ -1,2 +1,2 @@
 # errors
-A drop-in replacement for github.com/pkg/errors
+A drop-in replacement for [pkg/errors](https://github.com/pkg/errors)

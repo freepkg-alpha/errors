@@ -3,6 +3,8 @@
 
 package errors
 
+import "runtime"
+
 type Causer interface {
 	Cause() error
 }

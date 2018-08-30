@@ -53,7 +53,24 @@ func Wrap(cause error, a ...interface{}) error {
 	}
 }
 
+func WrapWithStack(cause error, a ...interface{}) error {
+	return &Domino{
+		cause: cause,
+		s: fmt.Sprint(a...),
+		st: trace(),
+	}
+}
+
 func Wrape(cause, effect error, a ...interface{}) error {
+	return &Domino{
+		cause: cause,
+		effect: effect,
+		s: fmt.Sprint(a...),
+		st: trace(),
+	}
+}
+
+func WrapeWithStack(cause, effect error, a ...interface{}) error {
 	return &Domino{
 		cause: cause,
 		effect: effect,
@@ -71,7 +88,24 @@ func Wrapef(cause, effect error, format string, a ...interface{}) error {
 	}
 }
 
+func WrapefWithStack(cause, effect error, format string, a ...interface{}) error {
+	return &Domino{
+		cause: cause,
+		effect: effect,
+		s: fmt.Sprintf(format, a...),
+		st: trace(),
+	}
+}
+
 func Wrapf(cause error, format string, a ...interface{}) error {
+	return &Domino{
+		cause: cause,
+		s: fmt.Sprintf(format, a...),
+		st: trace(),
+	}
+}
+
+func WrapfWithStack(cause error, format string, a ...interface{}) error {
 	return &Domino{
 		cause: cause,
 		s: fmt.Sprintf(format, a...),

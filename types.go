@@ -14,7 +14,7 @@ type Domino struct {
 	st     StackTrace
 }
 
-type Frame uintptr
+type Frame *runtime.Frame
 
 type RootCause struct {
 	s  string

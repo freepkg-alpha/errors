@@ -3,11 +3,6 @@
 
 package errors
 
-type Cause struct {
-	s  string
-	st StackTrace
-}
-
 type Causer interface {
 	Cause() error
 }
@@ -20,6 +15,11 @@ type Domino struct {
 }
 
 type Frame uintptr
+
+type RootCause struct {
+	s  string
+	st StackTrace
+}
 
 type StackTrace []Frame
 

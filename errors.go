@@ -47,7 +47,7 @@ func WithStack(err error) error {
 
 func Wrap(cause error, a ...interface{}) error {
 	var stack StackTrace
-	if !HasStack(cause) {
+	if !HasStackTrace(cause) {
 		stack = trace()
 	}
 	return &Domino{
@@ -67,7 +67,7 @@ func WrapWithStack(cause error, a ...interface{}) error {
 
 func Wrape(cause, effect error, a ...interface{}) error {
 	var stack StackTrace
-	if !HasStack(cause) {
+	if !HasStackTrace(cause) {
 		stack = trace()
 	}
 	return &Domino{
@@ -89,7 +89,7 @@ func WrapeWithStack(cause, effect error, a ...interface{}) error {
 
 func Wrapef(cause, effect error, format string, a ...interface{}) error {
 	var stack StackTrace
-	if !HasStack(cause) {
+	if !HasStackTrace(cause) {
 		stack = trace()
 	}
 	return &Domino{
@@ -111,7 +111,7 @@ func WrapefWithStack(cause, effect error, format string, a ...interface{}) error
 
 func Wrapf(cause error, format string, a ...interface{}) error {
 	var stack StackTrace
-	if !HasStack(cause) {
+	if !HasStackTrace(cause) {
 		stack = trace()
 	}
 	return &Domino{

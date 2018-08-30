@@ -1,3 +1,6 @@
+// stack.go: Implement helpers for stack traces
+// This file is hereby released into the public domain.
+
 package errors
 
 func FirstStackTrace(err error) StackTrace {

@@ -1,4 +1,4 @@
-// errors.go: Public types used by this package
+// types.go: Public types used by this package
 // This file is hereby released into the public domain.
 
 package errors
